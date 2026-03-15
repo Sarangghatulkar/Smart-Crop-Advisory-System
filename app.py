@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify
 import requests
+import os
 import json
 from ai_engine import CropAdvisoryEngine
 
@@ -110,4 +111,4 @@ if __name__ == "__main__":
     print("  NOTE: Replace WEATHER_API_KEY in app.py with your key")
     print("        Get free key at: https://openweathermap.org/api")
     print("=" * 60)
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
