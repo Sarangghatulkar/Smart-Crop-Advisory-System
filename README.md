@@ -23,49 +23,6 @@ smart_crop_advisory/
         └── app.js          # Frontend JavaScript
 ```
 
----
-
-## ⚙️ Step-by-Step Installation Guide
-
-### Step 1: Install Python
-Make sure Python 3.8+ is installed.
-```bash
-python --version
-```
-
-### Step 2: Get Free OpenWeatherMap API Key
-1. Go to https://openweathermap.org/api
-2. Click "Sign Up" and create a free account
-3. Go to "My API Keys" in your dashboard
-4. Copy your API key
-
-### Step 3: Set Your API Key
-Open `app.py` and replace line:
-```python
-WEATHER_API_KEY = "YOUR_API_KEY_HERE"
-```
-With your actual API key:
-```python
-WEATHER_API_KEY = "abc123youractualkey456"
-```
-
-### Step 4: Install Dependencies
-Open terminal/command prompt in the project folder:
-```bash
-pip install -r requirements.txt
-```
-Or install manually:
-```bash
-pip install flask requests
-```
-
-### Step 5: Run the Application
-```bash
-python app.py
-```
-
-### Step 6: Open in Browser
-Go to: http://127.0.0.1:5000
 
 ---
 
@@ -87,10 +44,10 @@ Go to: http://127.0.0.1:5000
 |--------------------|-------------------------------------------------------|
 | **Query**          | User input: city + soil moisture + soil type          |
 | **Document Index** | Crop/irrigation/pest knowledge base (Python dicts)    |
-| **Retrieval Engine** | ai_engine.py — matches query to knowledge base     |
-| **Relevance Scoring** | Farm health score (0–100) based on conditions     |
-| **Result Ranking** | Primary, secondary crops ranked by relevance         |
-| **External Source** | OpenWeatherMap API (real-time data retrieval)        |
+| **Retrieval Engine | ai_engine.py — matches query to knowledge base        |
+| **Relevance Scoring| Farm health score (0–100) based on conditions         |
+| **Result Ranking** | Primary, secondary crops ranked by relevance          |
+| **External Source**| OpenWeatherMap API (real-time data retrieval)         |
 
 ### IR Pipeline (5 Steps):
 1. **Query Formulation** → User inputs structured into query parameters
@@ -136,17 +93,6 @@ Go to: http://127.0.0.1:5000
 - ✅ Error handling
 
 ---
-
-## 🎓 For Viva Questions
-
-**Q: What is an IR system?**
-A: A system that retrieves relevant information from a collection in response to a user query.
-
-**Q: How does your project use IR?**
-A: The user's query (city + soil data) is matched against a knowledge base of agricultural rules. Real-time weather data is retrieved via API. The AI engine ranks and returns the most relevant crop/irrigation/pest advice.
-
-**Q: What is your knowledge base?**
-A: Python dictionaries in ai_engine.py containing crop rules indexed by climate zone, irrigation rules indexed by moisture thresholds, and pest rules indexed by temperature/humidity combinations.
 
 **Q: What external API did you use?**
 A: OpenWeatherMap API — fetches live temperature, humidity, wind speed, and weather conditions for any city worldwide.
